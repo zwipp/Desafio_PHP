@@ -27,7 +27,7 @@
 
     // Função que adiciona o produto ao json
 
-    function addProduto($nome,$descricao,$preco){
+    function addProduto($nome,$descricao,$preco,$foto){
 
         //carregando os produtos
         $produto = getProduto();
@@ -37,7 +37,7 @@
             'nome' => $nome,
             'descricao' => $descricao,
             'preco' => $preco,
-            //'foto' => $foto
+            'foto' => $foto
         ];
 
         // Transformando o array produto numa string json

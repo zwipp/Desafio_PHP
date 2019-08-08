@@ -6,8 +6,21 @@
 
 		$erros = errosNoPost(); //verificar se tem erros
 		
+		if($_FILES['foto']){
+			if ($_FILES['foto']['error'] == 0) {
+				//salvar foto no lugar certo
+				move_uploaded_file($_FILES['foto']['tmp_name'],'./foto/'.$_FILES['foto']['name']);
+
+				//salvando o nome do arquivo (da foto)
+				$arquivo_def = './foto/'.$_FILES['foto']['name'];
+			}
+			else {
+				$erros [] = 'errUpload';
+			}
+		}
+
 		if(count($erros) == 0){
-			addProduto($_POST['nome'],$_POST['descricao'],$_POST['preco']);
+			addProduto($_POST['nome'],$_POST['descricao'],$_POST['preco'],$arquivo_def);
 		}
 	}
 
@@ -26,7 +39,7 @@
 	$errPreco = in_array('errPreco',$erros);
 	
 	// Carregando vetor de produtos
-	$funcionarios = getProduto();
+	$produto = getProduto();
 
 ?>
 
@@ -41,8 +54,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
