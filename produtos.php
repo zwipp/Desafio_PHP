@@ -17,19 +17,44 @@
     <title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+		.foto_func{
+			width: 75px;
+			border-radius: 16px;
+		}
+	</style>
+
 </head>
+
 <body>
     
     <div class="container">
-		<div class="row">
-            <ul class="col-sm-12 col-md-4 list-group">
-            <?php foreach ($produto as $p): ?>
-                <img src="<?= $p['foto']; ?>" alt="" class="foto_func">
-                <span><?= $c['nome'];  ?></span>
-                <span><?= $c['descricao'];  ?></span>
-                <span><?= $c['preco'];  ?></span>
-            </ul>
-        </div>
+        <!-- ////////////// -->
+
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Foto</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($produto as $p): ?>
+        <tr>
+        <th scope="row"><img src="<?= $p['foto']; ?>" alt="" class="foto_func"></th>
+        <td><?= $p['nome'];  ?></td>
+        <td><?= $p['descricao'];  ?></td>
+        <td><?= $p['preco'];  ?></td>
+        </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+
+
+
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

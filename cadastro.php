@@ -5,7 +5,8 @@
 	if($_POST){
 
 		$erros = errosNoPost(); //verificar se tem erros
-		
+		//  print_r($erros);
+		//  die();
 		if($_FILES['foto']){
 			if ($_FILES['foto']['error'] == 0) {
 				//salvar foto no lugar certo
@@ -24,9 +25,9 @@
 		}
 	}
 
-	else{
+	else {
 		$erros = [];
-	}
+	}	
 
 
 
@@ -37,6 +38,9 @@
 
 	// errPreco será true se o campo preco for inválido e false se o campo estiver ok. 
 	$errPreco = in_array('errPreco',$erros);
+
+	// erro na foto
+	$errFoto = in_array('errFoto',$erros);
 	
 	// Carregando vetor de produtos
 	$produto = getProduto();
@@ -65,9 +69,9 @@
 			<form class="col-sm-12 col-md-8" action="cadastro.php" method="post" enctype="multipart/form-data">
 				
 				<div class="form-group">
-					<label for="nome">Nome do produto</label>
-					<input value="" type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do produto">
-					<?php if($errNome): ?><div class="invalid-feedback">Preencha o nome.</div><?php endif; ?>
+					<label for="nome">Nome do produto</label> <!-- adicionar os is-invalide para mostrar o erro -->
+					<input value="" type="text" class="form-control <?php if($errNome): ?>is-invalid <?php endif; ?>" id="nome" name="nome" placeholder="Digite o nome do produto">
+					<?php if($errNome): ?><div class="invalid-feedback">Adicione um nome.</div><?php endif; ?>
 				</div>
 
 				<div class="form-group">
@@ -77,14 +81,15 @@
 
 				<div class="form-group">
 					<label for="nome">Preço do produto</label>
-					<input value="00,00" type="number" class="form-control" id="preco" name="preco" placeholder="Digite o preço do produto">
+					<input value="00,00" type="number" class="form-control <?php if($errPreco): ?>is-invalid <?php endif; ?>" id="preco" name="preco" placeholder="Digite o preço do produto">
 					<?php if($errPreco): ?><div class="invalid-feedback">Coloque um preço.</div><?php endif; ?>
 				</div>
 
 				<div class="form-group">
 					<div class="custom-file">
-    					<input type="file" class="custom-file-input" name="foto" id="foto">
+    					<input type="file" class="custom-file-input <?php if($errFoto): ?>is-invalid <?php endif; ?>" name="foto" id="foto">
     					<label class="custom-file-label" for="foto">Escolha uma foto...</label>
+						<?php if($errFoto): ?><div class="invalid-feedback">Adicione uma foto.</div><?php endif; ?>
   					</div>
 				</div>
 				
