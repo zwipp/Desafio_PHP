@@ -54,4 +54,28 @@
     }
 
 
+    //função para verificar se o login esta valido
+    function login($email,$senha){
+
+        //carregar usuarios do arquivo json
+        $usuarios = getUsers();
+
+        //procurar o email do funcionario dado
+        $achou = false;
+        foreach ($usuarios as $u) {
+            $achou = true;
+            break;
+        }
+
+        if(!$achou){
+            return false;
+        }
+
+        else{
+            $senhaOk = password_verify($senha,$u['senha']);
+            return $senhaOk;
+        }
+
+    }
+
 ?>
