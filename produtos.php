@@ -2,6 +2,8 @@
 
     include('./inc/function.php');
 
+    include('./inc/block.php'); //confirmar se esta logado
+
     // Carregando vetor de produtos
 	$produto = getProduto();
 ?>

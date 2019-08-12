@@ -2,6 +2,8 @@
 
 	include('./inc/function.php');
 
+	include('./inc/block.php');
+
 	if($_POST){
 
 		$erros = errosNoPost(); //verificar se tem erros

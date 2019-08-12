@@ -2,6 +2,7 @@
 
     include('./inc/function_users.php');
 
+    include('./inc/block.php');
 
     if($_POST){
 
