@@ -9,6 +9,9 @@
         //verificando o post
         $erros = errosPost();
 
+        //print_r($_POST);
+        //exit;
+
         if(count($erros) == 0){
 
             // adicionar usuario ao arquivo json
@@ -76,10 +79,14 @@
 		<div class="row">
 
             <ul class="col-sm-12 col-md-4 list-group">
-				<?php foreach($usuarios as $c): ?>
+				<?php foreach($usuarios as $i => $c): ?>
 				<li class="list-group-item">
 					<span><?= $c['nome'];  ?></span> : 
 					<span><?= $c['email'];  ?></span>
+                    <form action="excluir_usuario.php" method="post">
+                        <input type="hidden" name="posicao" value="<?= $i; ?>">
+                        <button class="btn btn-primary" type="submit">Excluir</button>  
+                    </form>
 				</li>
 				<?php endforeach; ?>
 			</ul>
