@@ -17,8 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="./estilo/produtos.css">
     <style>
 		.foto_func{
 			width: 75px;
@@ -30,25 +30,28 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light " id="cabecalho">
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
   		<div class="collapse navbar-collapse" id="navbarText">
-    		<ul class="navbar-nav mr-auto">
+            
+            <img class="logo" src="./img/logo.png" alt="">
+            
+            <ul class="navbar-nav mr-auto">
       			<li class="nav-item active">
-        			<a class="nav-link" href="./cadastro.php">Cadastro de produto<span class="sr-only">(current)</span></a>
+        			<a class="nav-link" id="texto" href="./cadastro.php">Cadastro de produto<span class="sr-only">(current)</span></a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="./cadastro_usuario.php">Cadastro de usuario</a>
+        			<a class="nav-link" id="texto" href="./cadastro_usuario.php">Cadastro de usuario</a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="./produtos.php">produtos</a>
+        			<a class="nav-link" id="texto" href="./produtos.php">produtos</a>
       			</li>
                 <li class="nav-item">
                     <form action="deslogar.php" method="post">
                         <input type="hidden" name="deslogar">
-                        <button class="btn btn-primary" type="submit">Sair</button>  
+                        <button class="btn botao" type="submit">Sair</button>  
                     </form>
       			</li>
     		</ul>
@@ -79,7 +82,8 @@
                         <td> 
                             <form action="excluir_produto.php" method="post">
                                 <input type="hidden" name="posicao" value="<?= $i; ?>">
-                                <button class="btn btn-primary" type="submit">Excluir</button>  
+                                <input type="hidden" name="urlfoto" value="<?= $p['foto']; ?>">
+                                <button class="btn botao" type="submit">Excluir</button>  
                             </form>
                         </td>
                   </tr>

@@ -61,30 +61,31 @@
 	<title>Document</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="./estilo/produtos.css">
 </head>
 
 <body>
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light" id="cabecalho">
   		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
   		<div class="collapse navbar-collapse" id="navbarText">
+		  	<img class="logo" src="./img/logo.png" alt="">
     		<ul class="navbar-nav mr-auto">
       			<li class="nav-item active">
-        			<a class="nav-link" href="./cadastro.php">Cadastro de produto<span class="sr-only">(current)</span></a>
+        			<a class="nav-link" id="texto" href="./cadastro.php">Cadastro de produto<span class="sr-only">(current)</span></a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="./cadastro_usuario.php">Cadastro de usuario</a>
+        			<a class="nav-link" id="texto" href="./cadastro_usuario.php">Cadastro de usuario</a>
       			</li>
       			<li class="nav-item">
-        			<a class="nav-link" href="./produtos.php">produtos</a>
+        			<a class="nav-link" id="texto" href="./produtos.php">produtos</a>
       			</li>
 				<li class="nav-item">
                     <form action="deslogar.php" method="post">
                         <input type="hidden" name="deslogar">
-                        <button class="btn btn-primary" type="submit">Sair</button>  
+                        <button class="btn botao" type="submit">Sair</button>  
                     </form>
       			</li>
     		</ul>
@@ -92,8 +93,8 @@
 	</nav>
 
 
-	<div class="container">
-		<div class="row">
+	<div class="container" id="cadastro">
+		<div class="row d-flex justify-content-center align-items-center" >
 
 			<form class="col-sm-12 col-md-8" action="cadastro.php" method="post" enctype="multipart/form-data">
 				
@@ -122,7 +123,7 @@
   					</div>
 				</div>
 				
-				<button class="btn btn-primary" type="submit">Salvar</button>
+				<button class="btn botao" type="submit">Salvar</button>
 				
 			</form>
 		</div>

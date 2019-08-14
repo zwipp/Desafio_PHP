@@ -1,0 +1,21 @@
+.botao{
+    background-color: #ab1d1c;
+    border: 0;
+    color: white;
+}
+
+#cabecalho{
+    background-color: #16161de8;
+}
+
+#texto{
+    color: white;
+}
+
+.logo{
+    width: 5%;
+}
+
+#cadastro{
+    margin-top: 20px;
+}

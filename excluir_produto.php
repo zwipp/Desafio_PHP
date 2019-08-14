@@ -9,6 +9,8 @@
     //excluindo ocicao que foi mandada
     array_splice($produto,$_POST["posicao"],1); 
 
+    unlink($_POST['urlfoto']);
+
     //transformando o array usuarios numa string json
     $json = json_encode($produto);
 
