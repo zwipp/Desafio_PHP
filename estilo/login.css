@@ -1,0 +1,27 @@
+
+
+body{
+    background-image: url("../img/412067.jpg");
+    background-position: center;
+    background-size: cover; 
+}
+
+#login{
+    background-color: #16161de8;
+    border: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.botao{
+    background-color: #ab1d1c;
+    border: 0;
+}
+
+.texto{
+    color: white;
+}
+
+.logo{
+    width: 35%;
+}

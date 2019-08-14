@@ -69,6 +69,12 @@
       			<li class="nav-item">
         			<a class="nav-link" href="./produtos.php">produtos</a>
       			</li>
+                <li class="nav-item">
+                    <form action="deslogar.php" method="post">
+                        <input type="hidden" name="deslogar">
+                        <button class="btn btn-primary" type="submit">Sair</button>  
+                    </form>
+      			</li>
     		</ul>
   		</div>
 	</nav>

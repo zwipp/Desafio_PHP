@@ -2,7 +2,7 @@
 
     
 	session_start();
-	if($_SESSION['logado'] == false){
+	if(!$_SESSION['logado']){
 		header('location: login.php');
 	}
 
