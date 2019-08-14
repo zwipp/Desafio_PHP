@@ -57,18 +57,25 @@
             <thead>
                 <tr>
                     <th scope="col">Foto</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($produto as $p): ?>
+                <?php foreach ($produto as $i => $p): ?>
                     <tr>
                         <th scope="row"><img src="<?= $p['foto']; ?>" alt="" class="foto_func"></th>
                         <td><?= $p['nome'];  ?></td>
                         <td><?= $p['descricao'];  ?></td>
                         <td><?= $p['preco'];  ?></td>
+                        <td> 
+                            <form action="excluir_produto.php" method="post">
+                                <input type="hidden" name="posicao" value="<?= $i; ?>">
+                                <button class="btn btn-primary" type="submit">Excluir</button>  
+                            </form>
+                        </td>
                   </tr>
                 <?php endforeach; ?>
             </tbody>
